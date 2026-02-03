@@ -1,0 +1,92 @@
+2026-02-03 12:07:09,575 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'timestamp': 1770100629574, 'signature': 'f7d1f2b8e5f4270743b1c275ce89267681d9aa6e5e79c124abc2ad1a7602040b'}
+2026-02-03 12:07:10,207 | client | INFO | RESPONSE 400 {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-02-03 12:07:10,208 | client | ERROR | API error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1770100629574&signature=f7d1f2b8e5f4270743b1c275ce89267681d9aa6e5e79c124abc2ad1a7602040b
+2026-02-03 12:07:10,209 | cli | ERROR | order failed
+Traceback (most recent call last):
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\cli.py", line 41, in main
+    result = service.create(args)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\orders.py", line 12, in create
+    return self.client.place_market(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 53, in place_market
+    return self._post("/fapi/v1/order", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 45, in _post
+    r.raise_for_status()
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1770100629574&signature=f7d1f2b8e5f4270743b1c275ce89267681d9aa6e5e79c124abc2ad1a7602040b
+2026-02-03 12:08:42,665 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.003, 'timestamp': 1770100722665, 'signature': 'c51c25a3d5ec0ac7b1aceb18389164c4b97f6f9ff62dd7bcb2942d47df0afc58'}
+2026-02-03 12:08:43,118 | client | INFO | RESPONSE 400 {"code":-2019,"msg":"Margin is insufficient."}
+2026-02-03 12:08:43,119 | client | ERROR | API error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.003&timestamp=1770100722665&signature=c51c25a3d5ec0ac7b1aceb18389164c4b97f6f9ff62dd7bcb2942d47df0afc58
+2026-02-03 12:08:43,119 | cli | ERROR | order failed
+Traceback (most recent call last):
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\cli.py", line 41, in main
+    result = service.create(args)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\orders.py", line 12, in create
+    return self.client.place_market(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 53, in place_market
+    return self._post("/fapi/v1/order", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 45, in _post
+    r.raise_for_status()
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.003&timestamp=1770100722665&signature=c51c25a3d5ec0ac7b1aceb18389164c4b97f6f9ff62dd7bcb2942d47df0afc58
+2026-02-03 12:08:58,634 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': 0.003, 'price': 90000.0, 'timestamp': 1770100738634, 'signature': '3116d747777402bd43a859e844c580869ced6761289f5baf5d4a942deeccba06'}
+2026-02-03 12:08:59,230 | client | INFO | RESPONSE 400 {"code":-2019,"msg":"Margin is insufficient."}
+2026-02-03 12:08:59,231 | client | ERROR | API error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&timeInForce=GTC&quantity=0.003&price=90000.0&timestamp=1770100738634&signature=3116d747777402bd43a859e844c580869ced6761289f5baf5d4a942deeccba06
+2026-02-03 12:08:59,231 | cli | ERROR | order failed
+Traceback (most recent call last):
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\cli.py", line 41, in main
+    result = service.create(args)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\orders.py", line 17, in create
+    return self.client.place_limit(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 61, in place_limit
+    return self._post("/fapi/v1/order", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 45, in _post
+    r.raise_for_status()
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&timeInForce=GTC&quantity=0.003&price=90000.0&timestamp=1770100738634&signature=3116d747777402bd43a859e844c580869ced6761289f5baf5d4a942deeccba06
+2026-02-03 12:09:13,852 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.003, 'timestamp': 1770100753852, 'signature': 'c2d2a68a1f8a668702f8373a27c7ed3742984d27c079ec09bcd0e133f8099b35'}
+2026-02-03 12:09:14,215 | client | INFO | RESPONSE 400 {"code":-2019,"msg":"Margin is insufficient."}
+2026-02-03 12:09:14,216 | client | ERROR | API error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.003&timestamp=1770100753852&signature=c2d2a68a1f8a668702f8373a27c7ed3742984d27c079ec09bcd0e133f8099b35
+2026-02-03 12:09:14,217 | cli | ERROR | order failed
+Traceback (most recent call last):
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\cli.py", line 41, in main
+    result = service.create(args)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\orders.py", line 12, in create
+    return self.client.place_market(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 53, in place_market
+    return self._post("/fapi/v1/order", {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\bot\client.py", line 45, in _post
+    r.raise_for_status()
+  File "C:\Users\Sadik\Downloads\assignment\trading_bot_submission\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.003&timestamp=1770100753852&signature=c2d2a68a1f8a668702f8373a27c7ed3742984d27c079ec09bcd0e133f8099b35
+2026-02-03 12:24:30,591 | client | INFO | POST /fapi/v1/leverage params={'symbol': 'BTCUSDT', 'leverage': 10, 'timestamp': 1770101670590, 'signature': 'a9f8d45546b322287e12708596f0e5a8f75820762fe7ff0e8c64886e38df9042'}
+2026-02-03 12:24:31,244 | client | INFO | RESPONSE 200 {"symbol":"BTCUSDT","leverage":10,"maxNotionalValue":"40000000"}
+2026-02-03 12:24:31,247 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.003, 'timestamp': 1770101671247, 'signature': '0874948231234c974e12090c7525d74a95a3efb7a77b4fe5a4567b4f8f6e3881'}
+2026-02-03 12:24:31,595 | client | INFO | RESPONSE 200 {"orderId":12092672416,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"dvA3ihWH14bGhCktQXc6ZZ","price":"0.00","avgPrice":"0.00","origQty":"0.003","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1770101672554}
+2026-02-03 12:25:26,285 | client | INFO | POST /fapi/v1/leverage params={'symbol': 'BTCUSDT', 'leverage': 10, 'timestamp': 1770101726285, 'signature': '024861105ddcc73a0945fceaada9dd3c598fb5c7d02b3438544f386c38e5652e'}
+2026-02-03 12:25:26,897 | client | INFO | RESPONSE 200 {"symbol":"BTCUSDT","leverage":10,"maxNotionalValue":"40000000"}
+2026-02-03 12:25:26,899 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': 0.003, 'price': 90000.0, 'timestamp': 1770101726899, 'signature': 'c580556792f62f3c1bbee3c89d26f45b7ba642a955d4402a88dd234d2b22278a'}
+2026-02-03 12:25:27,514 | client | INFO | RESPONSE 200 {"orderId":12092677096,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"UYAQ34d7NSkQaex1pYw0jd","price":"90000.00","avgPrice":"0.00","origQty":"0.003","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1770101728469}
+2026-02-03 12:33:13,060 | client | INFO | POST /fapi/v1/leverage params={'symbol': 'BTCUSDT', 'leverage': 10, 'timestamp': 1770102193060, 'signature': 'c4d1f31283dba2b95ef46b5642280b316c7d2aa89342a05ca9c40cb66cbcb9a7'}
+2026-02-03 12:33:13,680 | client | INFO | RESPONSE 200 {"symbol":"BTCUSDT","leverage":10,"maxNotionalValue":"40000000"}
+2026-02-03 12:33:13,683 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.003, 'timestamp': 1770102193682, 'signature': '03fc9b422fb60f258c02b623586fe3941a9fed49819a7e40584399c03c246943'}
+2026-02-03 12:33:14,036 | client | INFO | RESPONSE 200 {"orderId":12092713579,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"ngS7GOwNYXzylt5BQI36gD","price":"0.00","avgPrice":"0.00","origQty":"0.003","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1770102195000}
+2026-02-03 12:33:22,284 | client | INFO | POST /fapi/v1/leverage params={'symbol': 'BTCUSDT', 'leverage': 10, 'timestamp': 1770102202283, 'signature': '5716df3e7313557cc0dc153e27e990842c30d14f6cb13d345172b3478ba0b901'}
+2026-02-03 12:33:22,877 | client | INFO | RESPONSE 200 {"symbol":"BTCUSDT","leverage":10,"maxNotionalValue":"40000000"}
+2026-02-03 12:33:22,880 | client | INFO | POST /fapi/v1/order params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'timeInForce': 'GTC', 'quantity': 0.003, 'price': 90000.0, 'timestamp': 1770102202880, 'signature': '097bd744a2bc4009598bdae4027962ac0c998d9f491cb976eecc82e136f7be81'}
+2026-02-03 12:33:23,239 | client | INFO | RESPONSE 200 {"orderId":12092715403,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"h6ACPvdx7F3ua9X6ReL59o","price":"90000.00","avgPrice":"0.00","origQty":"0.003","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTime":1770102204197}
